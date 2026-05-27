@@ -21,12 +21,11 @@ export default function ScrollAnimations() {
         duration: 1.15,
         easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
         smoothWheel: true,
-        smoothTouch: false,
         touchMultiplier: 1.4,
         wheelMultiplier: 1.0,
       });
 
-      (window as Record<string, unknown>).__lenis = lenis;
+      (window as unknown as Record<string, unknown>).__lenis = lenis;
 
       let rafId: number;
       function rafLoop(time: number) {
