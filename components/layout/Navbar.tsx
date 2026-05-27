@@ -18,7 +18,7 @@ function scrollToSection(id: string) {
 
   // Use Lenis if available so the smooth-scroll engine handles it correctly
   // and ScrollTrigger pin spacers are accounted for.
-  const lenis = (window as Record<string, unknown>).__lenis as
+  const lenis = (window as unknown as Record<string, unknown>).__lenis as
     | { scrollTo: (el: Element | number, opts: Record<string, unknown>) => void }
     | undefined;
 
