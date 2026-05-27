@@ -98,8 +98,8 @@ export default function ScrollAnimations() {
           trigger: sec,
           start: "top 60%",
           end: "bottom 40%",
-          onEnter:     () => { (window as Record<string, unknown>).__paintedBg && (window as Record<string, { setChapter: (k: string) => void }>).__paintedBg.setChapter(id); setActive(sec.id); },
-          onEnterBack: () => { (window as Record<string, unknown>).__paintedBg && (window as Record<string, { setChapter: (k: string) => void }>).__paintedBg.setChapter(id); setActive(sec.id); },
+          onEnter:     () => { (window as unknown as Record<string, unknown>).__paintedBg && (window as unknown as Record<string, { setChapter: (k: string) => void }>).__paintedBg.setChapter(id); setActive(sec.id); },
+          onEnterBack: () => { (window as unknown as Record<string, unknown>).__paintedBg && (window as unknown as Record<string, { setChapter: (k: string) => void }>).__paintedBg.setChapter(id); setActive(sec.id); },
         });
       });
 
