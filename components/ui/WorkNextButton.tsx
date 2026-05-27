@@ -9,7 +9,7 @@ export default function WorkNextButton() {
     const gap  = parseFloat(getComputedStyle(track).gap) || 60;
     const step = card.offsetWidth + gap;
 
-    const lenis = (window as Record<string, unknown>).__lenis as { scrollTo: (target: number, opts: Record<string, unknown>) => void } | undefined;
+    const lenis = (window as unknown as Record<string, unknown>).__lenis as { scrollTo: (target: number, opts: Record<string, unknown>) => void } | undefined;
     if (lenis) {
       lenis.scrollTo(window.scrollY + step, { duration: 0.8, easing: (t: number) => 1 - Math.pow(1 - t, 3) });
     } else {

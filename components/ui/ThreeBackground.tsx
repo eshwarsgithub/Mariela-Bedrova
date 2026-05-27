@@ -126,7 +126,7 @@ export default function ThreeBackground() {
       window.addEventListener("pointermove", onMove, { passive: true });
       window.addEventListener("resize", onResize);
 
-      (window as Record<string, unknown>).__paintedBg = {
+      (window as unknown as Record<string, unknown>).__paintedBg = {
         setChapter(key: string) {
           const p = PALETTES[key]; if (!p) return;
           tgt.base = [...p[0]]; tgt.a = [...p[1]]; tgt.b = [...p[2]]; tgt.c = [...p[3]];
