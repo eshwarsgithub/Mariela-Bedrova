@@ -25,6 +25,7 @@ export default function CustomCursor() {
     window.addEventListener("pointermove", onMove, { passive: true });
 
     function loop() {
+      if (!dot || !ring) return;
       dx += (mx - dx) * 0.55;
       dy += (my - dy) * 0.55;
       rx += (mx - rx) * 0.18;
