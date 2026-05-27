@@ -84,13 +84,10 @@ export default function ScrollAnimations() {
 
       // ── Hero entrance ─────────────────────────────────────
       gsap.set(".hero__title .line span", { yPercent: 110 });
-      gsap.set(".hero__meta-block, .hero__lede, .hero__scroll, .nav__brand, .nav__chapters a, .nav__cta", { opacity: 0, y: 16 });
+      gsap.set(".hero__meta-block, .hero__lede, .hero__scroll", { opacity: 0, y: 16 });
 
       const tl = gsap.timeline({ delay: 0.2 });
-      tl.to(".nav__brand",       { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" })
-        .to(".nav__chapters a",  { opacity: 1, y: 0, duration: 0.6, stagger: 0.05, ease: "power2.out" }, "<0.15")
-        .to(".nav__cta",         { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, "<")
-        .to(".hero__meta-block", { opacity: 1, y: 0, duration: 0.7, stagger: 0.06, ease: "power2.out" }, "-=0.3")
+      tl.to(".hero__meta-block", { opacity: 1, y: 0, duration: 0.7, stagger: 0.06, ease: "power2.out" })
         .to(".hero__title .line span", { yPercent: 0, duration: 1.2, stagger: 0.08, ease: "expo.out" }, "-=0.3")
         .to(".hero__lede",       { opacity: 1, y: 0, duration: 0.9, ease: "power2.out" }, "-=0.7")
         .to(".hero__scroll",     { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, "-=0.5");

@@ -3,10 +3,9 @@ export const SITE_META = {
   tagline: "Builder of Practical AI",
   lede: "Turning rough ideas into working products — fast — using AI, automation, and a deep allergy to unnecessary complexity. Simple, useful, and aimed at the real business problem underneath.",
   location: "Plovdiv, Bulgaria · 42.14°N",
-  email: "mariela@bedrova.ai",
+  email: "bedrovamariela@gmail.com",
   social: {
-    linkedin: "https://linkedin.com/in/marielabedrova",
-    twitter: "https://twitter.com/marielabedrova",
+    linkedin: "https://www.linkedin.com/in/mariela-bedrova-312155306/",
     github: "https://github.com/marielabedrova",
     readcv: "https://read.cv/marielabedrova",
   },

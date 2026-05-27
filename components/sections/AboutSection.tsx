@@ -25,11 +25,6 @@ export default function AboutSection() {
             and startups — usually the kind of work that quietly disappears time,
             money, and patience.
           </p>
-          <p data-split="true">
-            The point isn&rsquo;t the technology. The point is a customer answered
-            at 2am, a lead followed up before lunch, a booking that didn&rsquo;t
-            need a human, an idea tested in a week instead of a quarter.
-          </p>
           <p className="quiet" data-split="true">
             Practical. Simple. Scalable. Aimed squarely at real business
             problems &mdash; not the imaginary ones.

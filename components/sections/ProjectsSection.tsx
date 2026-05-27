@@ -1,3 +1,5 @@
+import WorkNextButton from "@/components/ui/WorkNextButton";
+
 export default function ProjectsSection() {
   return (
     <section id="work" className="work" data-chapter="IV" data-screen-label="04 Work">
@@ -13,6 +15,7 @@ export default function ProjectsSection() {
       </div>
 
       <div className="work__track-wrap">
+        <WorkNextButton />
         <div className="work__track">
 
           {/* Card 1 — Concierge.ai */}

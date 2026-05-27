@@ -203,6 +203,35 @@ body::before {
 @media (max-width: 900px) { .nav__chapters { display: none; } }
 
 /* =========================================================
+   Responsive — hero
+   ========================================================= */
+@media (max-width: 768px) {
+  .hero__content-row {
+    flex-direction: column-reverse !important;
+    align-items: flex-start !important;
+    gap: 24px !important;
+  }
+  .hero__content-row .hero__portrait-img {
+    width: clamp(100px, 28vw, 140px) !important;
+    height: clamp(100px, 28vw, 140px) !important;
+    align-self: flex-end;
+  }
+  .hero__meta {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .hero__meta-block.right {
+    text-align: left;
+    align-items: flex-start;
+  }
+  .hero__foot {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .hero__scroll { display: none; }
+}
+
+/* =========================================================
    Side gauge (chapter indicator)
    ========================================================= */
 .gauge {
@@ -312,6 +341,7 @@ body::before {
 .hero__meta-block strong { color: var(--c-ink); font-weight: 500; letter-spacing: 0.18em; }
 .hero__meta-block.right { text-align: right; align-items: flex-end; }
 
+
 .hero__title {
   align-self: center;
   font-family: var(--f-display);
@@ -321,6 +351,7 @@ body::before {
   letter-spacing: -0.025em;
   margin: clamp(40px, 8vh, 80px) 0;
 }
+
 .hero__title .line { display: block; overflow: hidden; }
 .hero__title .line span { display: inline-block; }
 .hero__title em {
@@ -551,6 +582,27 @@ body::before {
   height: 100vh;
   position: relative;
   overflow: hidden;
+}
+.work__next-btn {
+  position: absolute;
+  right: clamp(16px, 3vw, 40px);
+  bottom: clamp(32px, 6vh, 56px);
+  z-index: 10;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--c-ink);
+  color: var(--c-paper);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: none;
+  transition: background 0.3s, transform 0.3s;
+}
+.work__next-btn:hover {
+  background: var(--c-violet);
+  transform: scale(1.08);
 }
 .work__track {
   height: 100%;
@@ -871,9 +923,11 @@ body::before {
   outline: none;
   font-family: var(--f-sans);
   transition: border-color 0.3s;
-  cursor: none;
+  cursor: text;
   -webkit-appearance: none;
   appearance: none;
+  position: relative;
+  z-index: 1;
 }
 .field textarea { resize: vertical; min-height: 80px; }
 .field input:focus, .field textarea:focus, .field select:focus { border-color: var(--c-violet); }
@@ -918,6 +972,7 @@ body::before {
   font-size: 15px;
   letter-spacing: 0.01em;
   transition: background 0.3s, transform 0.3s;
+  cursor: pointer;
 }
 .contact__submit:hover { background: var(--c-violet); }
 .contact__submit svg { transition: transform 0.4s cubic-bezier(.2,.8,.2,1); }
@@ -1015,6 +1070,55 @@ body::before {
    Magnetic / hover affordances
    ========================================================= */
 [data-magnetic] { display: inline-flex; will-change: transform; }
+
+/* =========================================================
+   Contact form grid
+   ========================================================= */
+.contact-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+@media (max-width: 600px) {
+  .contact-form-grid { grid-template-columns: 1fr; }
+}
+
+/* =========================================================
+   Global responsive
+   ========================================================= */
+
+/* Tablet + mobile — section padding */
+@media (max-width: 768px) {
+  .section-container {
+    padding-left: clamp(16px, 5vw, 40px);
+    padding-right: clamp(16px, 5vw, 40px);
+  }
+  .section-py {
+    padding-top: clamp(48px, 8vh, 80px);
+    padding-bottom: clamp(48px, 8vh, 80px);
+  }
+}
+
+/* Nav CTA hide on very small screens */
+@media (max-width: 480px) {
+  .nav__cta { display: none; }
+  .nav__brand { font-size: 18px; }
+}
+
+/* Work section next button — hide on mobile (scroll-pinned section awkward on touch) */
+@media (max-width: 768px) {
+  .work__next-btn { display: none; }
+  .gauge { display: none; }
+}
+
+/* Chapter sections — tighter padding on mobile */
+@media (max-width: 640px) {
+  .chapter {
+    padding: clamp(72px, 10vh, 120px) var(--gutter);
+  }
+  .cap { grid-column: span 12 !important; }
+  .numbers__grid { grid-template-columns: 1fr 1fr; }
+}
 
 /* =========================================================
    Reduced motion
